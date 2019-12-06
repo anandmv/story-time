@@ -15,6 +15,7 @@ const useAudio = url => {
     useEffect(() => {
         audio.addEventListener('ended', () => setPlaying(false));
         return () => {
+            audio.pause();
             audio.removeEventListener('ended', () => setPlaying(false));
         };
     }, [audio]);
