@@ -1,8 +1,10 @@
 {
-    "id": "1",
-    "name":"TwinkleTwinkleLittleStar",
-    "banner":"//www.storynory.com/wp-content/uploads/2016/09/star-501x600.jpg",
+    "id": "twinkletwinkle",
+    "name":"Twinkle Twinkle Little Star",
+    "banner":"//partycity6.scene7.com/is/image/PartyCity/_pdp_sq_?$_1000x1000_$&$product=PartyCity/814753",
     "audio":"//omny.fm/shows/storynory/twinkle-twinkle-little-star.mp3",
+    "by":"By Story Nory",
+    "category":"Rhymes",
     "story":["Twinkle, twinkle, little star",
         "How I wonder what you are!",
         "Up above the world so high,",

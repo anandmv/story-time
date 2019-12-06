@@ -1,7 +1,10 @@
-import twinkle from './TwinkleTwinkleLittleStar';
-import baBaBlackSheep from './BaBaBlackSheep';
-import fiveLittleMonkeys from './FiveLittleMonkeys'
-const storiesJSON = [twinkle,baBaBlackSheep,fiveLittleMonkeys];
+import twinkle from './TwinkleTwinkleLittleStar/index.json';
+import baBaBlackSheep from './BaBaBlackSheep/index.json';
+import fiveLittleMonkeys from './FiveLittleMonkeys/index.json';
+import ringaRingaRoses from './RingaRingaRoses/index.json';
+import londonBridgeFallingDown from './LondonBridgeFallingDown/index.json';
+import humptyDumpty from './HumptyDumpty/index.json'
+const storiesJSON = [twinkle, ringaRingaRoses, baBaBlackSheep, londonBridgeFallingDown, fiveLittleMonkeys, humptyDumpty];
 /* Actions */
 
 export const storyById = id => ({

@@ -22,7 +22,7 @@ function App() {
     <Router/>
     <footer>
       <Typography variant="h6" align="center" gutterBottom>
-        Copyright © Story Time {new Date().getFullYear()}
+        Story Time {new Date().getFullYear()}
       </Typography>
     </footer>
   </BrowserRouter>

@@ -18,15 +18,14 @@ const useStyles = makeStyles(theme => ({
     cardGrid: {
         paddingTop: theme.spacing(8),
         paddingBottom: theme.spacing(8),
-        display:"flex",
-        flexDirection: "row",
-        justifyContent: "space-around",
+    },
+    gridItem:{
+        padding:"1rem"
     },
     card: {
         height: '100%',
         display: 'flex',
         flexDirection: 'column',
-        margin:"10px"
     },
     cardMedia: {
         paddingTop: '56.25%', // 16:9
@@ -39,7 +38,8 @@ const useStyles = makeStyles(theme => ({
 export const Stories = ({ stories }) => {
     const classes = useStyles();
     return <Container maxWidth="lg" className={classes.cardGrid}>
-        {stories.map(story => (<Grid item key={story.id} xs={12} sm={6} md={4}>
+        <Grid container>
+        {stories.map(story => (<Grid item key={story.id} xs={12} sm={6} md={4} className={classes.gridItem}>
             <Link to={`story/${story.id}`} key={story.id}>
                 <Card className={classes.card}>
                     <CardMedia
@@ -61,6 +61,7 @@ export const Stories = ({ stories }) => {
                 </Card>
             </Link>
         </Grid>))}
+        </Grid>
     </Container>
 }
 

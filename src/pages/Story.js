@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { withRouter } from "react-router-dom";
+import { withRouter , Link} from "react-router-dom";
 import Player from '../components/Player';
 import Reader from '../components/Reader';
 import { getStoryById } from '../store';
@@ -9,8 +9,14 @@ import Container from '@material-ui/core/Container';
 import Card from '@material-ui/core/Card';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
+import Fab from '@material-ui/core/Fab';
+import BackArrowIcon from '@material-ui/icons/ArrowBack';
 
 const useStyles = makeStyles(theme => ({
+    backButton:{
+        position:"absolute",
+        marginTop: "-60px"
+    },
     container: {
         paddingTop: theme.spacing(8),
         paddingBottom: theme.spacing(8),
@@ -19,9 +25,10 @@ const useStyles = makeStyles(theme => ({
         position:"relative",
     },
     storyImage:{
-        width: "100%",
         height: "100%",
         objectFit: "cover",
+        width: "50vw",
+        minWidth: "100%",
     },
     storyGrid:{
         display:"block",
@@ -33,6 +40,11 @@ const useStyles = makeStyles(theme => ({
 export const Story = ({story = {}}) => {
     const classes = useStyles();
     return (<Container maxWidth="lg" className={classes.container}>
+            <Link to="/">
+                <Fab color="primary" aria-label="back" className={classes.backButton}>
+                    <BackArrowIcon />
+                </Fab>
+            </Link>
             <Card>
                 <Grid container justify="center" spacing={0}>
                     <Grid key="mediaGrid" item className={classes.media}>
