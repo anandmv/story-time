@@ -14,7 +14,7 @@ function App() {
   <BrowserRouter>
     <AppBar position="relative">
       <Toolbar>
-        <Link to="/"><Typography variant="h6" color="textSecondary" noWrap>
+        <Link to="/" className="appName"><Typography variant="h6" noWrap>
           Story Time
         </Typography></Link>
       </Toolbar>
