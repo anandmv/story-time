@@ -18,11 +18,15 @@ const useStyles = makeStyles(theme => ({
     cardGrid: {
         paddingTop: theme.spacing(8),
         paddingBottom: theme.spacing(8),
+        display:"flex",
+        flexDirection: "row",
+        justifyContent: "space-around",
     },
     card: {
         height: '100%',
         display: 'flex',
         flexDirection: 'column',
+        margin:"10px"
     },
     cardMedia: {
         paddingTop: '56.25%', // 16:9
@@ -34,27 +38,29 @@ const useStyles = makeStyles(theme => ({
 
 export const Stories = ({ stories }) => {
     const classes = useStyles();
-    return <Container maxWidth="md" className={classes.cardGrid}>
-        {stories.map(story => (<Link to={`story/${story.id}`} key={story.id}><Grid item key={story.id} xs={12} sm={6} md={4}>
-            <Card className={classes.card}>
-                <CardMedia
-                    image={story.banner}
-                    title={story.name}
-                    className={classes.cardMedia}
-                />
-                <CardContent className={classes.cardContent}>
-                    <Typography gutterBottom variant="h5" component="h2">
-                        {story.name}
-                    </Typography>
-                    <Typography component="p" variant="overline">
-                        {story.story[0]}
-                    </Typography>
-                    <Typography component="p" variant="overline">
-                        {story.story[1]}
-                    </Typography>
-                </CardContent>
-            </Card>
-        </Grid></Link>))}
+    return <Container maxWidth="lg" className={classes.cardGrid}>
+        {stories.map(story => (<Grid item key={story.id} xs={12} sm={6} md={4}>
+            <Link to={`story/${story.id}`} key={story.id}>
+                <Card className={classes.card}>
+                    <CardMedia
+                        image={story.banner}
+                        title={story.name}
+                        className={classes.cardMedia}
+                    />
+                    <CardContent className={classes.cardContent}>
+                        <Typography gutterBottom variant="h5" component="h2">
+                            {story.name}
+                        </Typography>
+                        <Typography component="p" variant="overline">
+                            {story.story[0]}
+                        </Typography>
+                        <Typography component="p" variant="overline">
+                            {story.story[1]}
+                        </Typography>
+                    </CardContent>
+                </Card>
+            </Link>
+        </Grid>))}
     </Container>
 }
 
